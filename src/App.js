@@ -4,11 +4,11 @@ import {
   graphql
 } from 'react-relay'
 import environment from './Environment'
-import User from './User';
+import UserList from './UserList';
 
 const AppAllUsersQuery = graphql`
   query AppAllUsersQuery {
-    user(id: "3") {
+    allUsers {
       id
       name
       message
@@ -25,11 +25,10 @@ class App extends Component {
           environment={environment}
           query={AppAllUsersQuery}
           render={({error, props}) => {
-            console.log(error, props);
             if (error) {
               return <div>{error.message}</div>
             } else if (props) {
-              return <User {...props.user} />
+              return <UserList users={props.allUsers} />
             }
             return <div>Loading</div>
           }}

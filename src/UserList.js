@@ -6,7 +6,7 @@ class UserList extends Component {
     return (
       <div>
         <p>This is a list of users:</p>
-        {typeof this.props.users !== 'undefined' && this.props.users ? this.props.users.map(user => <User key={user.id} />) : ''}
+        {typeof this.props.users !== 'undefined' && this.props.users ? this.props.users.map(user => <User key={user.id} {...user} />) : ''}
       </div>
     );
   }

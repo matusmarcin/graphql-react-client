@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash c1c9b97e1f1969985c46ba11b7dbc99a
+ * @relayHash a524c00c61d4e3ef5255209f969dd217
  */
 
 /* eslint-disable */
@@ -10,18 +10,18 @@
 /*::
 import type {ConcreteBatch} from 'relay-runtime';
 export type AppAllUsersQueryResponse = {|
-  +user: ?{|
+  +allUsers: ?$ReadOnlyArray<?{|
     +id: ?string;
     +name: ?string;
     +message: ?string;
-  |};
+  |}>;
 |};
 */
 
 
 /*
 query AppAllUsersQuery {
-  user(id: "3") {
+  allUsers {
     id
     name
     message
@@ -39,17 +39,10 @@ const batch /*: ConcreteBatch*/ = {
       {
         "kind": "LinkedField",
         "alias": null,
-        "args": [
-          {
-            "kind": "Literal",
-            "name": "id",
-            "value": "3",
-            "type": "String"
-          }
-        ],
+        "args": null,
         "concreteType": "User",
-        "name": "user",
-        "plural": false,
+        "name": "allUsers",
+        "plural": true,
         "selections": [
           {
             "kind": "ScalarField",
@@ -73,7 +66,7 @@ const batch /*: ConcreteBatch*/ = {
             "storageKey": null
           }
         ],
-        "storageKey": "user{\"id\":\"3\"}"
+        "storageKey": null
       }
     ],
     "type": "Query"
@@ -91,17 +84,10 @@ const batch /*: ConcreteBatch*/ = {
       {
         "kind": "LinkedField",
         "alias": null,
-        "args": [
-          {
-            "kind": "Literal",
-            "name": "id",
-            "value": "3",
-            "type": "String"
-          }
-        ],
+        "args": null,
         "concreteType": "User",
-        "name": "user",
-        "plural": false,
+        "name": "allUsers",
+        "plural": true,
         "selections": [
           {
             "kind": "ScalarField",
@@ -125,11 +111,11 @@ const batch /*: ConcreteBatch*/ = {
             "storageKey": null
           }
         ],
-        "storageKey": "user{\"id\":\"3\"}"
+        "storageKey": null
       }
     ]
   },
-  "text": "query AppAllUsersQuery {\n  user(id: \"3\") {\n    id\n    name\n    message\n  }\n}\n"
+  "text": "query AppAllUsersQuery {\n  allUsers {\n    id\n    name\n    message\n  }\n}\n"
 };
 
 module.exports = batch;
