@@ -9,6 +9,12 @@ npm start
 open http://localhost:5000
 ```
 
+If you change queries:
+
+```
+npm run relay
+```
+
 ### Thanks:
 
 * React Simple Boilerplate by [@nolotz](https://github.com/nolotz/react-simple-boilerplate)

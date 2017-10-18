@@ -1,0 +1,14 @@
+# The root of all... queries
+type Query {
+  allUsers: [User]
+  user(id: String): User
+}
+
+# Somebody that you used to know
+type User {
+  name: String
+  message: String
+  id: String
+  friends: [User]
+}
+
