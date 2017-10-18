@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash d0a64cd2fc145b27cf38f0076a9f38c2
+ * @relayHash 2890d5e4b230292bd5906456a16e8ae7
  */
 
 /* eslint-disable */
@@ -26,6 +26,9 @@ fragment User_user on User {
   id
   name
   message
+  friends {
+    name
+  }
 }
 */
 
@@ -97,6 +100,24 @@ const batch /*: ConcreteBatch*/ = {
                 "args": null,
                 "name": "message",
                 "storageKey": null
+              },
+              {
+                "kind": "LinkedField",
+                "alias": null,
+                "args": null,
+                "concreteType": "User",
+                "name": "friends",
+                "plural": true,
+                "selections": [
+                  {
+                    "kind": "ScalarField",
+                    "alias": null,
+                    "args": null,
+                    "name": "name",
+                    "storageKey": null
+                  }
+                ],
+                "storageKey": null
               }
             ]
           }
@@ -105,7 +126,7 @@ const batch /*: ConcreteBatch*/ = {
       }
     ]
   },
-  "text": "query UserListQuery {\n  allUsers {\n    ...User_user\n  }\n}\n\nfragment User_user on User {\n  id\n  name\n  message\n}\n"
+  "text": "query UserListQuery {\n  allUsers {\n    ...User_user\n  }\n}\n\nfragment User_user on User {\n  id\n  name\n  message\n  friends {\n    name\n  }\n}\n"
 };
 
 module.exports = batch;

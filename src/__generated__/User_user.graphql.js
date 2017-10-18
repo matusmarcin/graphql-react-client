@@ -12,6 +12,9 @@ export type User_user = {|
   +id: ?string;
   +name: ?string;
   +message: ?string;
+  +friends: ?$ReadOnlyArray<?{|
+    +name: ?string;
+  |}>;
 |};
 */
 
@@ -41,6 +44,24 @@ const fragment /*: ConcreteFragment*/ = {
       "alias": null,
       "args": null,
       "name": "message",
+      "storageKey": null
+    },
+    {
+      "kind": "LinkedField",
+      "alias": null,
+      "args": null,
+      "concreteType": "User",
+      "name": "friends",
+      "plural": true,
+      "selections": [
+        {
+          "kind": "ScalarField",
+          "alias": null,
+          "args": null,
+          "name": "name",
+          "storageKey": null
+        }
+      ],
       "storageKey": null
     }
   ],
