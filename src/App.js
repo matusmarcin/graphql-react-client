@@ -25,7 +25,6 @@ class App extends Component {
           environment={environment}
           query={AppAllUsersQuery}
           render={({error, props}) => {
-            console.log(error, props);
             if (error) {
               return <div>{error.message}</div>
             } else if (props) {
